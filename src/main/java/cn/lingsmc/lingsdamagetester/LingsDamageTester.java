@@ -3,6 +3,7 @@ package cn.lingsmc.lingsdamagetester;
 import cn.lingsmc.lingsdamagetester.commands.Commands;
 import cn.lingsmc.lingsdamagetester.listener.DamageListener;
 import cn.lingsmc.lingsdamagetester.listener.QuitListener;
+import cn.lingsmc.lingsdamagetester.log.DamageLogWriter;
 import cn.lingsmc.lingsdamagetester.utils.ConfigUtils;
 import lombok.Getter;
 import org.bukkit.command.PluginCommand;
@@ -34,8 +35,9 @@ public final class LingsDamageTester extends JavaPlugin {
         Commands commands = new Commands();
         command.setExecutor(commands);
         command.setTabCompleter(commands);
-        // 初始化监听器
-        DamageListener.initialize();
+        // 初始化监听器（伤害日志写入插件数据目录 logs/ 下）
+        DamageLogWriter logWriter = new DamageLogWriter(getDataFolder().toPath().resolve("logs"));
+        DamageListener.initialize(logWriter);
         QuitListener.initialize();
     }
 

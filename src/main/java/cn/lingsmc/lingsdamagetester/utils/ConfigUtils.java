@@ -29,4 +29,12 @@ public class ConfigUtils {
         return LingsDamageTester.getInstance().getConfig()
                 .getBoolean(ConfigConstants.SHOW_CAUSE, ConfigConstants.DEFAULT_SHOW_CAUSE);
     }
+
+    /**
+     * @return 是否写入伤害测试日志（reload 后即时生效）
+     */
+    public static boolean damageLog() {
+        return LingsDamageTester.getInstance().getConfig()
+                .getBoolean(ConfigConstants.DAMAGE_LOG, ConfigConstants.DEFAULT_DAMAGE_LOG);
+    }
 }

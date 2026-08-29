@@ -11,6 +11,10 @@ public class ConfigConstants {
     public static final String SHOW_CAUSE = "show-cause";
     /** show-cause 默认开启 */
     public static final boolean DEFAULT_SHOW_CAUSE = true;
+    /** 是否写入伤害测试日志 */
+    public static final String DAMAGE_LOG = "damage-log";
+    /** damage-log 默认开启 */
+    public static final boolean DEFAULT_DAMAGE_LOG = true;
 
     private ConfigConstants() {
     }

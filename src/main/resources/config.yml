@@ -1,2 +1,4 @@
 # 伤害提示是否显示来源类型（摔落/近战等）
 show-cause: true
+# 是否写入伤害测试日志（plugins/LingsDamageTester/logs/damage-日期.log）
+damage-log: true
