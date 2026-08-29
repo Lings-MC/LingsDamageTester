@@ -65,7 +65,7 @@ public class DamageListener implements Listener {
         Bukkit.getPluginManager().registerEvents(new DamageListener(damageLogWriter), LingsDamageTester.getInstance());
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onDamage(EntityDamageEvent event) {
         if (!(event.getEntity() instanceof Player)) {
             return;

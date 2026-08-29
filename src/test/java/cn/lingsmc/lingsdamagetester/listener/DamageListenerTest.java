@@ -13,6 +13,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
@@ -29,6 +31,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
@@ -118,6 +121,17 @@ class DamageListenerTest {
         List<String> lines = Files.readAllLines(tempDir.resolve("damage-" + java.time.LocalDate.now() + ".log"));
         assertTrue(lines.size() >= 1, "日志为空");
         return String.join("\n", lines);
+    }
+
+    @Test
+    @DisplayName("监听注册在 MONITOR 优先级且忽略已取消事件（晚于其它插件的 HIGHEST 处理）")
+    void listensAtMonitorPriority() throws NoSuchMethodException {
+        EventHandler handler = DamageListener.class.getMethod("onDamage", EntityDamageEvent.class)
+                .getAnnotation(EventHandler.class);
+
+        assertNotNull(handler);
+        assertEquals(EventPriority.MONITOR, handler.priority());
+        assertTrue(handler.ignoreCancelled());
     }
 
     @Test
