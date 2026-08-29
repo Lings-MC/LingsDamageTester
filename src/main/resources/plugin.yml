@@ -1,10 +1,10 @@
-name: DamageTester
+name: LingsDamageTester
 version: '${project.version}'
-main: cn.lingsmc.damagetester.DamageTester
+main: cn.lingsmc.lingsdamagetester.LingsDamageTester
 api-version: '26.2'
 authors: [ 16870 ]
 commands:
-  DamageTester:
+  LingsDamageTester:
     description: 伤害测试模式
     usage: /dt help
     aliases: [ dt ]

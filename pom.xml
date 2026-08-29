@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.lingsmc</groupId>
-    <artifactId>DamageTester</artifactId>
+    <artifactId>LingsDamageTester</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>DamageTester</name>
+    <name>LingsDamageTester</name>
 
     <properties>
         <java.version>25</java.version>

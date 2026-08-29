@@ -1,4 +1,4 @@
-# DamageTester
+# LingsDamageTester
 
 一个 Minecraft 26.2 伤害测试插件：开启测试模式后自身打不死、受伤自动回满血，并在动作条实时显示每次受到的伤害数值。
 
@@ -15,8 +15,8 @@
 ## 目录结构
 
 ```
-src/main/java/cn/lingsmc/damagetester/
-├── DamageTester.java        # 入口：生命周期/命令/监听器挂载
+src/main/java/cn/lingsmc/lingsdamagetester/
+├── LingsDamageTester.java   # 入口：生命周期/命令/监听器挂载
 ├── commands/                # 命令系统（SubCommand 模式 + Tab 补全）
 ├── constants/               # 命令/消息/伤害原因/配置键常量（玩家可见文案统一在此）
 ├── listener/                # 伤害监听（显示+防死+回血）、退出清理
@@ -27,13 +27,13 @@ src/main/resources/          # plugin.yml + config.yml
 
 ## 使用
 
-1. 构建（`mvn clean package`）或获取 `target/DamageTester-1.0.jar`，放入服务器 `plugins/` 目录后重启服务器（Minecraft 26.2 服务端需 Java 25）。
+1. 构建（`mvn clean package`）或获取 `target/LingsDamageTester-1.0.jar`，放入服务器 `plugins/` 目录后重启服务器（Minecraft 26.2 服务端需 Java 25）。
 2. 游戏内以 Op 执行 `/dt on` 进入测试模式；测试完毕 `/dt off` 退出。
 3. 测试模式中：受到任何伤害不会死亡，血量自动回满，动作条显示本次伤害数值与来源。
 
 ## 命令
 
-根命令 `/damagetester`，别名 `/dt`；`on`/`off`/`toggle`/`status`/`reload` 需要 **Op** 权限。
+根命令 `/lingsdamagetester`，别名 `/dt`；`on`/`off`/`toggle`/`status`/`reload` 需要 **Op** 权限。
 
 - `/dt on` — 进入测试模式
 - `/dt off` — 退出测试模式
