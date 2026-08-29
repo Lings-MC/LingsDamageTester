@@ -1,5 +1,10 @@
-name: SpigotTemplate
+name: DamageTester
 version: '${project.version}'
-main: cn.lingsmc.spigottemplate.SpigotTemplate
-api-version: 1.13
-authors: [ Crsuh2er0 ]
+main: cn.lingsmc.damagetester.DamageTester
+api-version: '26.2'
+authors: [ 16870 ]
+commands:
+  DamageTester:
+    description: 伤害测试模式
+    usage: /dt help
+    aliases: [ dt ]

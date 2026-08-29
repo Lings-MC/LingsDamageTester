@@ -1,6 +1,6 @@
-package cn.lingsmc.spigottemplate.listener;
+package cn.lingsmc.damagetester.listener;
 
-import cn.lingsmc.spigottemplate.SpigotTemplate;
+import cn.lingsmc.damagetester.DamageTester;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
  * @since 2023/1/31
  */
 public class AnyListener implements Listener {
-    static SpigotTemplate plugin = SpigotTemplate.getInstance();
+    static DamageTester plugin = DamageTester.getInstance();
 
     private AnyListener() {
 

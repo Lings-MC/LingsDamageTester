@@ -1,8 +1,8 @@
-package cn.lingsmc.spigottemplate;
+package cn.lingsmc.damagetester;
 
-import cn.lingsmc.spigottemplate.commands.Commands;
-import cn.lingsmc.spigottemplate.listener.AnyListener;
-import cn.lingsmc.spigottemplate.utils.ConfigUtils;
+import cn.lingsmc.damagetester.commands.Commands;
+import cn.lingsmc.damagetester.listener.AnyListener;
+import cn.lingsmc.damagetester.utils.ConfigUtils;
 import lombok.Getter;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -11,12 +11,12 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author Crsuh2er0
  * @since 2023/1/16
  */
-public final class SpigotTemplate extends JavaPlugin {
+public final class DamageTester extends JavaPlugin {
     @Getter
-    private static SpigotTemplate instance;
+    private static DamageTester instance;
 
     private static void initInstance() {
-        instance = JavaPlugin.getPlugin(SpigotTemplate.class);
+        instance = JavaPlugin.getPlugin(DamageTester.class);
     }
 
     @Override

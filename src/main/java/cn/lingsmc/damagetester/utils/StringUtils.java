@@ -1,4 +1,4 @@
-package cn.lingsmc.spigottemplate.utils;
+package cn.lingsmc.damagetester.utils;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
