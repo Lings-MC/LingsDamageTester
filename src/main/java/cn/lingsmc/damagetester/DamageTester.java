@@ -2,6 +2,7 @@ package cn.lingsmc.damagetester;
 
 import cn.lingsmc.damagetester.commands.Commands;
 import cn.lingsmc.damagetester.listener.DamageListener;
+import cn.lingsmc.damagetester.listener.QuitListener;
 import cn.lingsmc.damagetester.utils.ConfigUtils;
 import lombok.Getter;
 import org.bukkit.command.PluginCommand;
@@ -27,19 +28,18 @@ public final class DamageTester extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        // init commands
+        // 初始化命令
         final PluginCommand command = this.getCommand(instance.getName());
         assert command != null;
         Commands commands = new Commands();
         command.setExecutor(commands);
         command.setTabCompleter(commands);
-        // init listeners
+        // 初始化监听器
         DamageListener.initialize();
+        QuitListener.initialize();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
     }
 }

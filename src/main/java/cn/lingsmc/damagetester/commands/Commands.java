@@ -1,7 +1,11 @@
 package cn.lingsmc.damagetester.commands;
 
 import cn.lingsmc.damagetester.commands.subcommands.HelpCommand;
+import cn.lingsmc.damagetester.commands.subcommands.OffCommand;
+import cn.lingsmc.damagetester.commands.subcommands.OnCommand;
 import cn.lingsmc.damagetester.commands.subcommands.ReloadCommand;
+import cn.lingsmc.damagetester.commands.subcommands.StatusCommand;
+import cn.lingsmc.damagetester.commands.subcommands.ToggleCommand;
 import cn.lingsmc.damagetester.constants.MessageConstants;
 import cn.lingsmc.damagetester.utils.StringUtils;
 import org.bukkit.Bukkit;
@@ -31,11 +35,15 @@ public class Commands implements CommandExecutor, TabCompleter {
     public Commands() {
         registerCommand(HELP, new HelpCommand());
         registerCommand(RELOAD, new ReloadCommand());
+        registerCommand(ON, new OnCommand());
+        registerCommand(OFF, new OffCommand());
+        registerCommand(TOGGLE, new ToggleCommand());
+        registerCommand(STATUS, new StatusCommand());
     }
 
     private void registerCommand(String commandName, SubCommand subCommand) {
         if (getCOMMAND_MAP().containsKey(commandName)) {
-            Bukkit.getLogger().warning("!");
+            Bukkit.getLogger().warning("[DamageTester] 子命令 " + commandName + " 已注册，跳过重复注册.");
             return;
         }
         getCOMMAND_MAP().put(commandName, subCommand);
