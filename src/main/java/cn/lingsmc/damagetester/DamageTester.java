@@ -1,7 +1,7 @@
 package cn.lingsmc.damagetester;
 
 import cn.lingsmc.damagetester.commands.Commands;
-import cn.lingsmc.damagetester.listener.AnyListener;
+import cn.lingsmc.damagetester.listener.DamageListener;
 import cn.lingsmc.damagetester.utils.ConfigUtils;
 import lombok.Getter;
 import org.bukkit.command.PluginCommand;
@@ -35,7 +35,7 @@ public final class DamageTester extends JavaPlugin {
         command.setExecutor(commands);
         command.setTabCompleter(commands);
         // init listeners
-        AnyListener.initialize();
+        DamageListener.initialize();
     }
 
     @Override
